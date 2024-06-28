@@ -1,0 +1,46 @@
+public class Main {
+    public static void main(String[] args) {
+        // Criando heróis
+        Heroi mago = new Heroi("gandalf", 1000, "mago");
+        Heroi guerreiro = new Heroi("aragorn", 87, "guerreiro");
+        Heroi monge = new Heroi("aang", 12, "monge");
+        Heroi ninja = new Heroi("naruto", 17, "ninja");
+        mago.atacar();
+        guerreiro.atacar();
+        monge.atacar();
+        ninja.atacar();
+    }
+}
+
+class Heroi {
+    private String nome;
+    private int idade;
+    private String tipo;
+
+    public Heroi(String nome, int idade, String tipo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.tipo = tipo;
+    }
+
+    public void atacar() {
+        String ataque;
+        switch (this.tipo.toLowerCase()) {
+            case "mago":
+                ataque = "magia";
+                break;
+            case "guerreiro":
+                ataque = "espada";
+                break;
+            case "monge":
+                ataque = "artes marciais";
+                break;
+            case "ninja":
+                ataque = "shuriken";
+                break;
+            default:
+                ataque = "ataque desconhecido";
+        }
+        System.out.println("O " + this.tipo + " atacou usando " + ataque);
+    }
+}
